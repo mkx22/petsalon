@@ -1,3 +1,4 @@
+//程序入口
 package njuics.demos.petsalon;
 
 import org.springframework.boot.SpringApplication;

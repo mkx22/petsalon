@@ -1,4 +1,5 @@
-package njuics.demos.petsalon;
+//宠物享受的服务
+package njuics.demos.petsalon.model;
 
 import lombok.Data;
 import javax.persistence.Entity;
@@ -35,6 +36,7 @@ enum ServiceCategory {
 public class Service {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
     private Date date;
     private double fee;
     private ServiceCategory category;

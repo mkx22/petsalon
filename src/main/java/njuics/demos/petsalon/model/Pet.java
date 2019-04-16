@@ -1,12 +1,11 @@
-package njuics.demos.petsalon;
+//宠物
+package njuics.demos.petsalon.model;
 
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 enum PetType {
     DOG("狗"),
@@ -34,8 +33,11 @@ enum PetType {
 public class Pet {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
     private String name;
-
     private PetType type;
 
+    @OneToMany(targetEntity = Pet.class,cascade = CascadeType.ALL)
+    @JoinColumn(name="owner_pet",referencedColumnName = "id")
+    private List<Service> services;
 }
