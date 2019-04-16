@@ -1,0 +1,22 @@
+export default {
+  namespace: 'typeCount',
+  state:{
+    type:"dashed",
+    count:1
+  },
+  reducers:{
+    click(state,{type,payload}){//更新状态，action指定要执行什么，type
+      return {
+        type: "danger",
+        count: 2
+      }
+    }
+  },//对state操作
+  effects:{
+
+  },
+  subscription:{
+
+  },
+}
+
