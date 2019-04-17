@@ -49,12 +49,14 @@ class petList extends Component{
           itemLayout="horizontal"
           dataSource={data1}
           renderItem={item => (
-            <List.Item actions={[<b href="/d">delete</b>,<b href="/u">update</b>,<Link to="/">Back to index</Link>]}>
+            <List.Item actions={[<a href="/list">owner</a>,<a href="/service">service</a>,<Link to="/">Back to index</Link>]}>
+              <List.Item actions={[<b href="/d">delete</b>,<b href="/u">update</b>]}>
               <List.Item.Meta
                 avatar={<Avatar src={display} />}
                 title={<b href="title">{item.title}</b>}
                 description={item.description}
               />
+            </List.Item>
             </List.Item>
           )}
         />

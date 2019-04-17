@@ -32,11 +32,13 @@ class myList extends Component{
         dataSource={data}
         renderItem={item => (
           <List.Item actions={[<a href="/pet">pet</a>,<a href="/service">service</a>,<Link to="/">Back to index</Link>]}>
+            <List.Item actions={[<b href="/d">delete</b>,<b href="/u">update</b>]}>
             <List.Item.Meta
               avatar={<Avatar src={display} />}
               title={<b href="">{item.title}</b>}
               description={item.description}
             />
+          </List.Item>
           </List.Item>
         )}
       />

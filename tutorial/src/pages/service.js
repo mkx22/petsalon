@@ -1,5 +1,5 @@
 import react,{Component} from 'react';
-import display from '../assets/pet.png';
+import display from '../assets/puppy.png';
 import {List,Avatar} from 'antd';
 import styles from './index.css';
 import Link from 'umi/link';
@@ -49,12 +49,14 @@ class petList extends Component{
           itemLayout="horizontal"
           dataSource={data1}
           renderItem={item => (
-            <List.Item actions={[<b href="/d">delete</b>,<b href="/u">update</b>,<Link to="/">Back to index</Link>]}>
+            <List.Item actions={[<a href="/list">owner</a>,<a href="/pet">pet</a>,<Link to="/">Back to index</Link>]}>
+            <List.Item actions={[<b href="/d">delete</b>,<b href="/u">update</b>]}>
               <List.Item.Meta
                 avatar={<Avatar src={display} />}
                 title={<b href="title">{item.title}</b>}
                 description={item.description}
               />
+            </List.Item>
             </List.Item>
           )}
         />
