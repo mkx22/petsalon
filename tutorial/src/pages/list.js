@@ -1,5 +1,5 @@
 import react,{Component} from 'react';
-import display from '../assets/pet.png';
+import display from '../assets/paw.png';
 import {List,Avatar} from 'antd';
 import styles from './index.css';
 import Link from 'umi/link';
@@ -33,10 +33,10 @@ class myList extends Component{
           <List.Item actions={[<a href="/pet">pet</a>,<a href="/service">service</a>,<Link to="/">Back to index</Link>]}>
             <List.Item.Meta
               avatar={<Avatar src={display} />}
-              title={<a href="https://ant.design">{item.title}</a>}
+              title={<b href="https://ant.design">{item.title}</b>}
               description={item.description}
             />
-            </List.Item>
+          </List.Item>
         )}
       />
     </div>

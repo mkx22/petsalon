@@ -65,33 +65,6 @@ function BasicLayout(props) {
           <Avatar src={bone}/>
           <Avatar src={paw}/>
           <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
-          <Avatar src={bone}/>
-          <Avatar src={paw}/>
-          <Avatar src={puppy}/>
         </Header>
         <Content>{props.children}</Content>
         <Footer/>
