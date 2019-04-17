@@ -9,8 +9,8 @@ function BasicLayout(props) {
   return (
     <Layout>
       <Sider
-        width={80}
-        style={{ background: '#bbb' }}
+        width={60}
+        style={{ background: '#fff' }}
       >
         <Menu>
           <Menu.Item><Avatar src={bone}/></Menu.Item>
@@ -26,18 +26,18 @@ function BasicLayout(props) {
           <Menu.Item><Avatar src={paw}/></Menu.Item>
           <Menu.Item><Avatar src={puppy}/></Menu.Item>
           <Menu.Item><Avatar src={bone}/></Menu.Item>
-          <Menu.Item><Avatar src={paw}/></Menu.Item>
-          <Menu.Item><Avatar src={puppy}/></Menu.Item>
-          <Menu.Item><Avatar src={bone}/></Menu.Item>
-          <Menu.Item><Avatar src={paw}/></Menu.Item>
-          <Menu.Item><Avatar src={puppy}/></Menu.Item>
-          <Menu.Item><Avatar src={bone}/></Menu.Item>
-          <Menu.Item><Avatar src={paw}/></Menu.Item>
-          <Menu.Item><Avatar src={puppy}/></Menu.Item>
+          {/*<Menu.Item><Avatar src={paw}/></Menu.Item>*/}
+          {/*<Menu.Item><Avatar src={puppy}/></Menu.Item>*/}
+          {/*<Menu.Item><Avatar src={bone}/></Menu.Item>*/}
+          {/*<Menu.Item><Avatar src={paw}/></Menu.Item>*/}
+          {/*<Menu.Item><Avatar src={puppy}/></Menu.Item>*/}
+          {/*<Menu.Item><Avatar src={bone}/></Menu.Item>*/}
+          {/*<Menu.Item><Avatar src={paw}/></Menu.Item>*/}
+          {/*<Menu.Item><Avatar src={puppy}/></Menu.Item>*/}
         </Menu>
       </Sider>
       <Layout>
-        <Header style={{ background: '#fff' }}>
+        <Header style={{ background: '#eee' }}>
           <Avatar src={bone}/>
           <Avatar src={paw}/>
           <Avatar src={puppy}/>
