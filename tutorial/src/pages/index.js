@@ -1,53 +1,65 @@
-import React,{Component} from 'react';
 import styles from './index.css';
-import {Button,Tag} from 'antd';
-import {connect} from 'dva';//注册器
-
-const typeMap = ["dashed","normal","danger","primary"];
+import {Button,Tag,Row,Col} from 'antd';
+import React,{Component} from 'react';
+import {connect} from 'dva';
+import Link from 'umi/link';
+// const typeMap = ["dashed","normal","danger","primary"];
 
 class MyButton extends Component{
-  // state = {
-  //   type: "dashed",
-  //   count: 0,
-  // }
 
   render(){
     return (
-      <Button type={this.props.type} onClick={()=>{
-        let count=this.state.count;
-        this.setState({type:typeMap[count%4],count: count+1})}
-      }>
-      Click Me
-      </Button>
+        <Button type={this.props.type} onClick={this.props.typeChange}>
+          Click Me
+        </Button>
     )
   }
 }
 
-const mapStateToProps = (state) =>{//把dva对象里的东西映射到props里
-  return{
-
+const mapStateToProps = (state) =>{
+  return {
+    mystate: state.typecount
   }
 }
 
 const mapDispatchToProps = (dispatch) =>{
   return {
-
+    // click: ()=>dispatch({type:"typecount/click",payload:{photo:"clothes"}}),
+    get: ()=>dispatch({type:"typecount/get"})
   }
 }
 
-@connect(mapStateToProps,mapDispatchToProps)//connnect传递参数
+@connect(mapStateToProps,mapDispatchToProps)
 class MyPage extends Component{
+  // state = {
+  //   type: "dashed",
+  //   count: 0,
+  // }
   render(){
-//    console.log(this.props.my);
+    // console.log(this.props.mystate);
     return(
     <div className={styles.normal}>
-    <ul className={styles.list}>
-    <MyButton/>
-    <Tag color="line">{this.state.count}</Tag>
-    </ul>
-    </div>
-    )
+    {/* <Button type={this.state.type} onClick={()=>{
+      let count = this.state.count+1;
+      this.setState({
+        type: typeMap[count%4],
+        count: count
+      })
+    }}>Click Me</Button>
+    <Tag color="lime">{this.state.count}</Tag> */}
+      <Col>
+        <Row><MyButton  type={this.props.mystate.type} typeChange={this.props.get}/></Row>
+        <Row><Tag color="lime">{this.props.mystate.count}</Tag></Row>
+        <Row><Link to="/list"><Button>Go to Lists</Button></Link></Row>
+      </Col>
+    </div>)
   }
 }
-  
-export default MyButton;
+
+export default MyPage;
+
+
+// function dispatch(action){
+//   bangdingdaodvamodel;
+//   return action;
+// }
