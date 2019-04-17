@@ -23,17 +23,36 @@ class petList extends Component{
     this.props.fetch();
   }
   render(){
-//    const data = this.props.list.data===undefined?[]:this.props.list.data;//incase data is not passed from backend
+    const data1 = [
+      {
+        title: 'Pet 1',
+        description: 'description1'
+      },
+      {
+        title: 'Pet 2',
+        description: 'description2'
+      },
+      {
+        title: 'Pet 3',
+        description: 'description3'
+      },
+      {
+        title: 'Pet 4',
+        description: 'description4'
+      },
+    ];
+
+//    const data1 = this.props.list.data1===undefined?[]:this.props.list.data1;//incase data is not passed from backend
     return (
       <div className={styles.list}>
         <List
           itemLayout="horizontal"
-          // dataSource={data}
+          dataSource={data1}
           renderItem={item => (
-            <List.Item actions={[<a href="/pet">pet</a>,<a href="/service">service</a>,<Link to="/">Back to index</Link>]}>
+            <List.Item actions={[<b href="/d">delete</b>,<b href="/u">update</b>,<Link to="/">Back to index</Link>]}>
               <List.Item.Meta
                 avatar={<Avatar src={display} />}
-                title={<b href="https://ant.design">{item.title}</b>}
+                title={<b href="title">{item.title}</b>}
                 description={item.description}
               />
             </List.Item>

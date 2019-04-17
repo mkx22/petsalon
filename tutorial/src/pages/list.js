@@ -23,6 +23,7 @@ class myList extends Component{
     this.props.fetch();
   }
   render(){
+//    const data=[]
     const data = this.props.list.data===undefined?[]:this.props.list.data;//incase data is not passed from backend
     return (
     <div className={styles.list}>
@@ -33,7 +34,7 @@ class myList extends Component{
           <List.Item actions={[<a href="/pet">pet</a>,<a href="/service">service</a>,<Link to="/">Back to index</Link>]}>
             <List.Item.Meta
               avatar={<Avatar src={display} />}
-              title={<b href="https://ant.design">{item.title}</b>}
+              title={<b href="">{item.title}</b>}
               description={item.description}
             />
           </List.Item>

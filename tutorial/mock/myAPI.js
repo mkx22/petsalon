@@ -27,33 +27,15 @@ const data = [
 //     description: 'description1'
 //   },
 //   {
-//     title: 'Owner 2',
+//     title: 'Pet 2',
 //     description: 'description2'
 //   },
 //   {
-//     title: 'Owner 3',
+//     title: 'Pet 3',
 //     description: 'description3'
 //   },
 //   {
-//     title: 'Owner 4',
-//     description: 'description4'
-//   },
-// ];
-// const data2 = [
-//   {
-//     title: 'Owner 1',
-//     description: 'description1'
-//   },
-//   {
-//     title: 'Owner 2',
-//     description: 'description2'
-//   },
-//   {
-//     title: 'Owner 3',
-//     description: 'description3'
-//   },
-//   {
-//     title: 'Owner 4',
+//     title: 'Pet 4',
 //     description: 'description4'
 //   },
 // ];
@@ -61,4 +43,5 @@ const data = [
 export default{
     'GET /api/get': getclickcount,
     'GET /api/fetch': data,
+
 }
