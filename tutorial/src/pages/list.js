@@ -30,7 +30,7 @@ class myList extends Component{
         itemLayout="horizontal"
         dataSource={data}
         renderItem={item => (
-          <List.Item actions={[<a href="http://www.baidu.com">baidu</a>,<Link to="/">Back to index</Link>]}>
+          <List.Item actions={[<a href="/pet">pet</a>,<a href="/service">service</a>,<Link to="/">Back to index</Link>]}>
             <List.Item.Meta
               avatar={<Avatar src={display} />}
               title={<a href="https://ant.design">{item.title}</a>}

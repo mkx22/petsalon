@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/service") // This means URL's start with /demo (after Application path)
 public class ServiceController {
@@ -19,8 +21,8 @@ public class ServiceController {
     private ServiceRepository serviceRepository;
     private ServeService serveService;
 
-    @PostMapping(path="/add") // Map ONLY GET Requests
-    public @ResponseBody String addNewService (@RequestParam Service s) {
+    @PostMapping() // Map ONLY GET Requests
+    public  String addNewService (@RequestParam Service s) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
@@ -30,8 +32,8 @@ public class ServiceController {
         return "Saved";
     }
 
-    @GetMapping(path="/all")
-    public @ResponseBody Iterable<Service> getAllServices() {
+    @GetMapping()
+    public List<Service> getAllServices() {
         // This returns a JSON or XML with the users
         return serviceRepository.findAll();
     }
@@ -43,7 +45,7 @@ public class ServiceController {
 
     //更新
     @PutMapping("/{id}")
-    public @ResponseBody String updateOwner(@RequestBody Service n,@PathVariable Integer id) {
+    public String updateOwner(@RequestBody Service n,@PathVariable Integer id) {
         Service target = serviceRepository.findById(id).get();
         target.setDate(n.getDate());
         target.setFee(n.getFee());
@@ -53,7 +55,7 @@ public class ServiceController {
     }
 
     //删除
-    @DeleteMapping(path="/delete")
+    @DeleteMapping("/{id}")
     @ResponseBody
     public void deletePet(@PathVariable int id){
         //ownerRepository.deleteById(id);

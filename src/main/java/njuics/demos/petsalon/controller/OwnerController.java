@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.jws.Oneway;
 import java.util.List;
 
-@Controller    // This means that this class is a Controller
+@RestController    // This means that this class is a Controller
 @RequestMapping(path="/owner") // This means URL's start with /demo (after Application path)
 public class OwnerController {
     @Autowired // This means to get the bean called userRepository
@@ -18,8 +18,9 @@ public class OwnerController {
     private OwnerRepository ownerRepository;
     private OwnerService ownerService;
 
+    //id即url
     //添加
-    @PostMapping("/add") // Map ONLY GET Requests
+    @PostMapping() // Map ONLY GET Requests
     public @ResponseBody String addNewOwner (@RequestBody Owner n) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
@@ -29,7 +30,7 @@ public class OwnerController {
     }
 
     //查询
-    @GetMapping("/getall")
+    @GetMapping()
     public @ResponseBody
     List<Owner> getAllOwners() {
         // This returns a JSON or XML with the users

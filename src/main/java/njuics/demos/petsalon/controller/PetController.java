@@ -11,7 +11,9 @@ import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.*;
 
-@Controller    // This means that this class is a Controller
+import java.util.List;
+
+@RestController    // This means that this class is a Controller
 @RequestMapping(path="/pet") // This means URL's start with /demo (after Application path)
 public class PetController {
     @Autowired // This means to get the bean called userRepository
@@ -19,8 +21,8 @@ public class PetController {
     private PetRepository petRepository;
     private PetService petService;
 
-    @PostMapping(path="/add") // Map ONLY GET Requests
-    public @ResponseBody String addNewPet (@RequestParam Pet pet) {
+    @PostMapping() // Map ONLY GET Requests
+    public String addNewPet (@RequestParam Pet pet) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
@@ -28,8 +30,8 @@ public class PetController {
         return "Saved";
     }
 
-    @GetMapping(path="/all")
-    public @ResponseBody Iterable<Pet> getAllPets() {
+    @GetMapping()
+    public List<Pet> getAllPets() {
         // This returns a JSON or XML with the users
         return petRepository.findAll();
     }
@@ -41,7 +43,7 @@ public class PetController {
 
     //更新
     @PutMapping("/{id}")
-    public @ResponseBody String updateOwner(@RequestBody Pet n,@PathVariable Integer id) {
+    public String updateOwner(@RequestBody Pet n,@PathVariable Integer id) {
         Pet target = petRepository.findById(id).get();
         target.setName(n.getName());
         target.setType(n.getType());
@@ -50,8 +52,7 @@ public class PetController {
     }
 
     //删除
-    @DeleteMapping(path="/delete")
-    @ResponseBody
+    @DeleteMapping("/{id}")
     public void deletePet(@PathVariable int id){
         //ownerRepository.deleteById(id);
         petService.deletePet(id);
