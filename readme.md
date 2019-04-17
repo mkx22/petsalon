@@ -10,6 +10,8 @@ mysql，简单实现，未分层，解决maven依赖问题，LoadDatabase正常�
 增加service层，实现了有些靠谱的增删查更新
 之前一直忘记提交代码以外的文件了（因为和DS_STORE混在一起...）
 
+前端2.0：
+添加了三个页面（list（owner）、pet、service）
+
 next：
-为什么只有课上随便写的程序才跑得起来啊？？
-交互调试ing
+前后端交互尝试ing
